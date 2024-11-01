@@ -43,7 +43,7 @@ const PROJECTS: { [key: number]: ProjectType } = {
     description: `Applied OOP concepts (abstraction, encapsulation, inheritance, polymorphism) to enhance game features.
           Adopted design principles such as SOLID and DRY to ensure code modularity, maintainability, and extensibility.
           Utilized UML and sequence diagrams for comprehensive design documentation.`,
-    url: "",
+    url: "https://github.com/jmk-001/Designborne",
   },
   4: {
     title: "Medication Tracker",
