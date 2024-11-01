@@ -11,7 +11,7 @@ const BgColor = () => {
 
   useEffect(() => {
     const startColor = new THREE.Color();
-    gl.getClearColor(startColor); // Get the current clear color
+    gl.getClearColor(startColor);
 
     console.log(LANG_COLOR[langSelected]);
     const endColor = new THREE.Color(LANG_COLOR[langSelected]);
@@ -21,11 +21,11 @@ const BgColor = () => {
       r: endColor.r,
       g: endColor.g,
       b: endColor.b,
-      duration: 0.3, // Duration of the transition in seconds
+      duration: 0.3,
       onUpdate: () => {
         gl.setClearColor(startColor);
       },
-      ease: "power2.inOut", // Easing function for the transition
+      ease: "power2.inOut",
     });
   }, [gl, langSelected]);
 
