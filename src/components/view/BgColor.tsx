@@ -1,21 +1,25 @@
 import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
-import { LANG_KEY, LANG_COLOR } from "../../data/Constants";
+import { LANG_COLOR } from "../../data/Constants";
 import { useSelection } from "../Context/SelectionContext";
 import gsap from "gsap";
 import * as THREE from "three";
 
 const BgColor = () => {
-  const { gl } = useThree();
+  const { gl, scene } = useThree();
   const { langSelected } = useSelection();
 
   useEffect(() => {
     const startColor = new THREE.Color();
     gl.getClearColor(startColor);
 
-    console.log(LANG_COLOR[langSelected]);
     const endColor = new THREE.Color(LANG_COLOR[langSelected]);
-    console.log(endColor);
+
+    if (langSelected !== 0) {
+      scene.fog = new THREE.Fog(endColor, 2, 3); // Set fog color and range
+    } else {
+      scene.fog = null; // Remove fog if no language is selected
+    }
 
     gsap.to(startColor, {
       r: endColor.r,
@@ -27,7 +31,7 @@ const BgColor = () => {
       },
       ease: "power2.inOut",
     });
-  }, [gl, langSelected]);
+  }, [gl, langSelected, scene]);
 
   return null;
 };

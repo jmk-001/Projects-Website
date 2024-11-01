@@ -1,5 +1,5 @@
 import React from "react";
-import MainView from "./components/view/MainView";
+import MainView from "./components/View/MainView";
 import { SelectionProvider } from "./components/Context/SelectionContext";
 
 const App: React.FC = () => {

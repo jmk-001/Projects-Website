@@ -18,6 +18,7 @@ const ModelGroup = () => {
 
   return (
     <group>
+      {/** Load all models */}
       {models.map(([key, url], index) => {
         const xPosition = index * spacing - totalWidth / 2;
 
