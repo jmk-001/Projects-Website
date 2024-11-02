@@ -1,6 +1,7 @@
 "use client";
 import React, { createContext, useState, useContext, ReactNode } from "react";
 import { LANG_KEY } from "../../data/Constants";
+import { useEffect } from "react";
 
 // Define the shape of the context
 interface SelectionContextType {
@@ -24,6 +25,13 @@ export const SelectionProvider: React.FC<SelectionProviderProps> = ({
   children,
 }) => {
   const [langSelected, setLangSelected] = useState<number>(0);
+
+  useEffect(() => {
+    console.log(
+      "SelectionProvider initialized with langSelected:",
+      langSelected
+    );
+  }, [langSelected]);
 
   return (
     <SelectionContext.Provider

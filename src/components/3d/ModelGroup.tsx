@@ -3,12 +3,12 @@ import Model from "./Model";
 
 const ModelGroup = () => {
   const MODEL_URL = {
-    js: "/models/js.glb",
-    ts: "/models/ts.glb",
-    java: "/models/java.glb",
-    dart: "/models/dart.glb",
-    cs: "/models/cs.glb",
-    python: "/models/python.glb",
+    js: `${process.env.PUBLIC_URL}/models/js.glb`,
+    ts: `${process.env.PUBLIC_URL}/models/ts.glb`,
+    java: `${process.env.PUBLIC_URL}/models/java.glb`,
+    dart: `${process.env.PUBLIC_URL}/models/dart.glb`,
+    cs: `${process.env.PUBLIC_URL}/models/cs.glb`,
+    python: `${process.env.PUBLIC_URL}/models/python.glb`,
   };
 
   const spacing = 1.2;

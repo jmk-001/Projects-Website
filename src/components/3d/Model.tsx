@@ -17,7 +17,7 @@ const Model = ({
   const gltf = useLoader(GLTFLoader, url);
   const mixer = useRef(new AnimationMixer(gltf.scene)).current;
   const modelRef = useRef<Group>(null);
-  const name = url.slice(8, -4);
+  const name = url.slice(url.lastIndexOf("/") + 1, -4);
 
   const defaultPos = new THREE.Vector3(position[0], 0, 0);
   const idleAnimationName = `${name}_idle`;
