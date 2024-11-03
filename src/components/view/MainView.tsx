@@ -4,6 +4,8 @@ import Camera from "./Camera";
 import ModelGroup from "../3d/ModelGroup";
 import Light from "../3d/Light";
 import ProjectInfoBox from "../UI/ProjectInfoBox";
+import CubyButton from "../UI/CubyButton";
+import CubySpawner from "../3d/CubySpawner";
 
 const MainView: React.FC = () => {
   return (
@@ -13,9 +15,13 @@ const MainView: React.FC = () => {
         <BgColor />
         <Camera />
         <ModelGroup />
+        <CubySpawner />
       </Canvas>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <ProjectInfoBox />
+      </div>
+      <div className="absolute top-3 right-3 text-gray-500">
+        <CubyButton />
       </div>
       <div className="absolute bottom-1 right-1 text-gray-500">
         <a
