@@ -84,9 +84,6 @@ const Model = ({
   // Language Logo onClick Handler
   const onClickHandler = () => {
     if (langSelected !== LANG_KEY[name]) {
-      if (langSelected !== 0) {
-        return null;
-      }
       setLangSelected(LANG_KEY[name]);
       gsapPosition(new THREE.Vector3(-1.5, 2, 0), 0.5);
       gsapRotation(new THREE.Euler(0, 0, -0.5), 0.5);
@@ -97,6 +94,16 @@ const Model = ({
     }
   };
 
+  useEffect(() => {
+    if (langSelected === LANG_KEY[name] && langSelected !== LANG_KEY["none"]) {
+      gsapPosition(new THREE.Vector3(-1.5, 2, 0), 0.5);
+      gsapRotation(new THREE.Euler(0, 0, -0.5), 0.5);
+    } else {
+      gsapPosition(defaultPos, 0.5);
+      gsapRotation(new THREE.Euler(0, 0, 0), 0.5);
+    }
+  }, [langSelected]);
+
   return (
     <primitive
       key={name}
@@ -104,7 +111,11 @@ const Model = ({
       object={gltf.scene}
       scale={0.5}
       position={position}
-      onClick={() => onClickHandler()}
+      onClick={() =>
+        langSelected === LANG_KEY["none"] && langSelected !== LANG_KEY[name]
+          ? setLangSelected(LANG_KEY[name])
+          : setLangSelected(LANG_KEY["none"])
+      }
       onPointerOver={() => {
         if (langSelected === 0 || langSelected === LANG_KEY[name])
           gsapScale(new THREE.Vector3(0.55, 0.55, 0.55));

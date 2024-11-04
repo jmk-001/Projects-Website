@@ -5,7 +5,7 @@ import { LANG_COLOR } from "../../data/Constants";
 import { gsap } from "gsap";
 
 const ProjectInfoBox: React.FC = () => {
-  const { langSelected } = useSelection();
+  const { langSelected, setLangSelected } = useSelection();
   const [title, setTitle] = useState<string>("Title");
   const [img, setImg] = useState<string>("");
   const [description, setDescription] = useState<string>("Description");
@@ -52,7 +52,20 @@ const ProjectInfoBox: React.FC = () => {
         paddingTop: "20px",
       }}
     >
-      <h1 className="text-2xl font-bold border-b pb-4 font-mono">{title}</h1>
+      <div className="flex items-center space-x-4 w-full border-b pb-4">
+        <button
+          onClick={() => setLangSelected(0)}
+          className="p-2 rounded hover:bg-gray-600 flex items-center justify-center"
+          aria-label="Back"
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/icons/arrow.png`}
+            alt="Back"
+            className="h-5 w-5"
+          />
+        </button>
+        <h1 className="text-2xl font-bold font-mono">{title}</h1>
+      </div>
       <div
         className="space-y-0 flex flex-col max-h-100 overflow-y-auto"
         style={{ paddingTop: "20px" }}
