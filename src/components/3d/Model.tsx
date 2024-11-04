@@ -88,7 +88,7 @@ const Model = ({
         return null;
       }
       setLangSelected(LANG_KEY[name]);
-      gsapPosition(new THREE.Vector3(-1.5, 1, 0), 0.5);
+      gsapPosition(new THREE.Vector3(-1.5, 2, 0), 0.5);
       gsapRotation(new THREE.Euler(0, 0, -0.5), 0.5);
     } else {
       setLangSelected(LANG_KEY["none"]);

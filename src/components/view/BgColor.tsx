@@ -16,9 +16,9 @@ const BgColor = () => {
     const endColor = new THREE.Color(LANG_COLOR[langSelected]);
 
     if (langSelected !== 0) {
-      scene.fog = new THREE.Fog(endColor, 2, 3); // Set fog color and range
+      scene.fog = new THREE.Fog(endColor, 4, 5);
     } else {
-      scene.fog = null; // Remove fog if no language is selected
+      scene.fog = null;
     }
 
     gsap.to(startColor, {

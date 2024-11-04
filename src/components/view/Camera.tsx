@@ -5,8 +5,8 @@ const Camera: React.FC = () => {
     <>
       <PerspectiveCamera
         makeDefault
-        position={[0, 3, 0]}
-        fov={75}
+        position={[0, 5, 0]}
+        fov={50}
         rotation={[-Math.PI / 2, 0, 0]}
       />
     </>

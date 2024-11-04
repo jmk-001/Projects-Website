@@ -14,7 +14,7 @@ const CubySpawner = () => {
         ...prevCubies,
         {
           id: prevCubies.length,
-          position: [-3.35, 1, 1], // adjust position to avoid overlap
+          position: [-4.5, 1, 0.1],
         },
       ]);
     }

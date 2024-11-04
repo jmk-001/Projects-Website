@@ -65,7 +65,7 @@ const Cuby = ({
       key={name}
       ref={modelRef}
       object={gltf.scene}
-      scale={[1, 1, 0.3]}
+      scale={[1.5, 1.5, 1]}
       position={position}
       rotation={new THREE.Euler(-Math.PI / 2, 0, 0)}
     />
